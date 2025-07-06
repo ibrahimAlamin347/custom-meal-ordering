@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Meal - Glass Food</title>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/build-meal.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="logo">Taste</a></li>
+                <li>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="build-meal.html" class="nav-link active">Build Meal</a>
+                        <a href="menu.html" class="nav-link">Menu</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="admin-login.html" class="nav-link">Admin</a>
+                        <i class="bx bxs-cart-alt"></i>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section id="build-meal">
+        <div class="build-meal-container">
+            <div class="build-meal-box">
+                <h2>Build Your Perfect Meal</h2>
+                <p class="subtitle">Choose your meal and customize it with your preferred ingredients</p>
+
+                <form action="submit-order.php" method="POST">
+                    <div class="form-group meal-group">
+                        <label for="meal">Choose a meal:</label>
+                        <select id="meal" name="meal" required>
+                            <option disabled selected>Select a meal</option>
+                            <option value="Jollof Rice">Jollof Rice</option>
+                            <option value="Fried Rice">Fried Rice</option>
+                            <option value="Ofada Rice">Ofada Rice</option>
+                            <option value="Ayamase (Ofada Stew)">Ayamase (Ofada Stew)</option>
+                            <option value="Chinese Fried Rice">Chinese Fried Rice</option>
+                            <option value="Gbegiri (Bean Soup)">Gbegiri (Bean Soup)</option>
+                            <option value="Fish Stew">Fish Stew</option>
+                            <option value="Meat Stew">Meat Stew</option>
+                            <option value="Chicken Stew">Chicken Stew</option>
+                            <option value="Shawarma">Shawarma</option>
+                            <option value="Concoction Rice">Concoction Rice</option>
+                            <option value="Stir Fry Pasta">Stir Fry Pasta</option>
+                        </select>
+                    </div>
+
+                    <div id="ingredients" class="ingredients-section"></div>
+
+                    <div class="form-group spice-mixes">
+                        <label><strong>Choose spice mixes:</strong></label>
+                        <div class="spice-grid">
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Curry" /> Curry</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Multipurpose" /> Multipurpose</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Seafood" /> Seafood</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Chilli's and pepper" /> Chilli's and pepper</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Smd Moroccan" /> Smd Moroccan</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Yaji Original" /> Yaji Original</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Yaju Suya" /> Yaju Suya</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Valu-All Purpose" /> Valu-All Purpose</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Value-Native" /> Value-Native</label>
+                            <label class="spice-item"><input type="checkbox" name="spice[]" value="Herbs and Spice Sea Salt" /> Herbs and Spice Sea Salt</label>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information Section -->
+                    <div class="customer-info-section">
+                        <h3>Delivery Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number *</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery Address *</label>
+                            <textarea id="address" name="address" rows="3" required placeholder="Enter your complete delivery address"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required placeholder="Enter your city">
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">Postal Code</label>
+                                <input type="text" id="postalCode" name="postalCode" placeholder="Enter postal code">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryInstructions">Delivery Instructions (Optional)</label>
+                            <textarea id="deliveryInstructions" name="deliveryInstructions" rows="2" placeholder="Any special delivery instructions, landmarks, or notes for the delivery person"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Order</button>
+                </form>
+
+                <div id="summary" class="order-summary"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circles -->
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/build-meal.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html> 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Glass Food</title>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="logo">Taste</a></li>
+                <li>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="build-meal.html" class="nav-link">Build Meal</a>
+                        <a href="menu.html" class="nav-link">Menu</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                        <a href="admin-login.html" class="nav-link">Admin</a>
+                        <i class="bx bxs-cart-alt"></i>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section id="contact">
+        <div class="contact-container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Get In Touch</h1>
+                    <p class="hero-subtitle">We'd love to hear from you. Contact us for orders, feedback, or any questions.</p>
+                </div>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="contact-info-section">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="bx bx-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                        <p>+1 (555) 987-6543</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="bx bx-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@glassfood.com</p>
+                        <p>orders@glassfood.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="bx bx-map"></i>
+                        </div>
+                        <h3>Address</h3>
+                        <p>123 Food Street</p>
+                        <p>Kitchen District, NY 10001</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="bx bx-time"></i>
+                        </div>
+                        <h3>Hours</h3>
+                        <p>Mon-Sat: 10:00 AM - 10:00 PM</p>
+                        <p>Sunday: 11:00 AM - 9:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="contact-form-section">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                    <form class="contact-form" action="submit-contact.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="order">Order Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <div class="map-container">
+                    <h2>Find Us</h2>
+                    <div class="map-placeholder">
+                        <i class="bx bx-map-alt"></i>
+                        <p>Interactive Map Coming Soon</p>
+                        <p>123 Food Street, Kitchen District, NY 10001</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How long does delivery take?</h3>
+                        <p>Our standard delivery time is 30-45 minutes for most areas. During peak hours, it may take up to 60 minutes.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I customize my order?</h3>
+                        <p>Absolutely! You can select your preferred ingredients and spice levels when building your meal on our website.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you offer catering services?</h3>
+                        <p>Yes, we provide catering for events and parties. Please contact us at least 24 hours in advance for catering orders.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept cash, credit cards, debit cards, and all major digital payment platforms including PayPal and Apple Pay.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is there a minimum order amount?</h3>
+                        <p>Yes, there's a minimum order of ₦25,000 for delivery and ₦15,000 for pickup orders.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you have vegetarian options?</h3>
+                        <p>Yes, we offer a variety of vegetarian and vegan options. You can customize any dish to be vegetarian-friendly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="contact-cta">
+                <h2>Ready to Order?</h2>
+                <p>Start building your perfect meal right now</p>
+                <div class="cta-buttons">
+                    <a href="build-meal.html" class="cta-btn primary">Build Your Meal</a>
+                    <a href="menu.html" class="cta-btn secondary">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circles -->
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html> 
