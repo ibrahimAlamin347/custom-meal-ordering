@@ -44,7 +44,7 @@
 ### 🎓 Academic Context
 - **Course**: CSC 335 - Software Engineering
 - **Institution**: University of Ibadan, Nigeria
-- **Semester**: 2024/2025 Academic Session
+- **Semester**: 2023/2024 Academic Session
 - **Project Type**: Group Project
 
 ### 🌟 Key Highlights
