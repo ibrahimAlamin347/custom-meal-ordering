@@ -241,22 +241,21 @@ document.addEventListener('DOMContentLoaded', function() {
         summarySection.innerHTML = summaryHTML;
         summarySection.style.display = 'block';
     }
-
-    function calculateIngredientModificationPrice(meal, selectedIngredients) {
-        const originalIngredients = meals[meal] || [];
-        const removedIngredients = originalIngredients.filter(ingredient => !selectedIngredients.includes(ingredient));
-        const addedIngredients = selectedIngredients.filter(ingredient => !originalIngredients.includes(ingredient));
-        
-        // ₦1,000 for each removed ingredient (refund)
-        const removalRefund = removedIngredients.length * -1000;
-        // ₦1,500 for each added ingredient
-        const additionCost = addedIngredients.length * 1500;
-        
-        return removalRefund + additionCost;
-    }
 });
 
 // Global functions for buttons
+function calculateIngredientModificationPrice(meal, selectedIngredients) {
+    const originalIngredients = meals[meal] || [];
+    const removedIngredients = originalIngredients.filter(ingredient => !selectedIngredients.includes(ingredient));
+    const addedIngredients = selectedIngredients.filter(ingredient => !originalIngredients.includes(ingredient));
+    
+    // ₦1,000 for each removed ingredient (refund)
+    const removalRefund = removedIngredients.length * -1000;
+    // ₦1,500 for each added ingredient
+    const additionCost = addedIngredients.length * 1500;
+    
+    return removalRefund + additionCost;
+}
 function resetForm() {
     document.getElementById("meal").value = "";
     document.getElementById("ingredients").style.display = 'none';
@@ -298,6 +297,21 @@ function removeExtraIngredient(ingredientId) {
 }
 
 function confirmOrder() {
+    console.log('confirmOrder function called');
+    
+    // Check if Firebase is available
+    if (typeof firebase === 'undefined') {
+        console.error('Firebase is not loaded');
+        alert('Error: Firebase is not loaded. Please refresh the page and try again.');
+        return;
+    }
+    
+    if (typeof db === 'undefined') {
+        console.error('Firestore database is not initialized');
+        alert('Error: Database is not initialized. Please refresh the page and try again.');
+        return;
+    }
+    
     const selectedMeal = document.getElementById("meal").value;
     const selectedSpices = Array.from(document.querySelectorAll('input[name="spice[]"]:checked'))
         .map(checkbox => checkbox.value);
@@ -312,6 +326,14 @@ function confirmOrder() {
     const city = document.getElementById('city').value.trim();
     const postalCode = document.getElementById('postalCode').value.trim();
     const deliveryInstructions = document.getElementById('deliveryInstructions').value.trim();
+    
+    console.log('Order data:', {
+        meal: selectedMeal,
+        spices: selectedSpices,
+        ingredients: selectedIngredients,
+        customerName: customerName,
+        phoneNumber: phoneNumber
+    });
     
     // Calculate prices
     const basePrice = mealPrices[selectedMeal] || 0;
@@ -343,6 +365,8 @@ function confirmOrder() {
         orderDate: firebase.firestore.FieldValue.serverTimestamp(),
         orderId: generateOrderId()
     };
+    
+    console.log('Saving order to Firebase:', orderData);
     
     // Save order to Firebase
     db.collection('orders').add(orderData)
