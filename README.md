@@ -139,11 +139,11 @@
 
 ## 🚀 Live Demo
 
-**🌐 Website**: [Glass Food Website](https://)
+**🌐 Website**: [Custom Meal Food Website](https://)
 
 **🔐 Admin Access**:
 - **URL**: `/admin-login.html`
-- **Email**: `admin@glassfood.com`
+- **Email**: `admin@customealfood.com`
 - **Password**: `admin123456`
 
 ---

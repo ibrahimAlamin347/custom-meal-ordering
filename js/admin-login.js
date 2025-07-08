@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginMessage = document.getElementById('loginMessage');
     const loginBtn = document.querySelector('.login-btn');
 
+    // Use window.auth for global compatibility
+    var auth = window.auth;
+
     // Check if user is already logged in
     auth.onAuthStateChanged(function(user) {
         if (user) {

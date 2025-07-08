@@ -1,3 +1,4 @@
+var auth = window.auth;
 let allOrders = [];
 let filteredOrders = [];
 
